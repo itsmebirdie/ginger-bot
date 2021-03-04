@@ -1,0 +1,30 @@
+{
+  "name": "the-ginger-bot",
+  "version": "1.0.0",
+  "description": "Discord Moderation Bot",
+  "main": "src/bot.js",
+  "scripts": {
+    "test": "npm run lint",
+    "lint": "eslint src",
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheGingerCo/ginger-bot.git"
+  },
+  "author": "The Ginger Co",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheGingerCo/ginger-bot/issues"
+  },
+  "homepage": "https://github.com/TheGingerCo/ginger-bot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "nodemon": "^2.0.7"
+  }
+}
