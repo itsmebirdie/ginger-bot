@@ -11,5 +11,8 @@ module.exports = (client) => {
     client.on('guildMemberAdd', (member) => {
         const { name } = member.guild;
         member.send(`Welcome to ${name}! DM me with \`!verify\` to start the verification process and gain access to the server!`)
+            .catch(err => {
+                return;
+            })
     })
 }
