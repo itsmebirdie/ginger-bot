@@ -33,4 +33,4 @@ client.on('ready', async () => {
         .registerCommandsIn(path.join(__dirname, 'cmds'));
 });
 
-client.login(env.TOKEN);
+client.login(process.env.TOKEN);
