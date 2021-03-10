@@ -8,6 +8,8 @@ const Commando = require('discord.js-commando');
 const { prefix } = require('../config.json');
 const env = require('dotenv').config().parsed;
 
+const welcome = require('./events/welcome');
+
 const client = new Commando.CommandoClient({
     owner: '713019770949206016',
     commandPrefix: prefix
@@ -21,12 +23,13 @@ client.on('ready', async () => {
     });
     client.user.setPresence({ status: 'dnd' });
 
+    welcome(client);
+
     client.registry
         .registerGroups([
             ['misc', 'Miscellaneous Commands'],
             ['moderation', 'Moderation Commands']
         ])
-        .registerDefaults()
         .registerCommandsIn(path.join(__dirname, 'cmds'));
 });
 
