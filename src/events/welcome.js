@@ -1,5 +1,4 @@
 const { Message } = require('discord.js');
-const mongo = require('../mongo');
 const command = require('../command');
 
 module.exports = (client) => {
@@ -10,9 +9,7 @@ module.exports = (client) => {
     });
 
     client.on('guildMemberAdd', (member) => {
-        const server = member.guild.id;
-        const { serverName } =require(`../../config/${server}.json`);
-
-        member.send(`Welcome to ${serverName}! DM me with \`!verify\` to start the verification process and gain access to the server!`)
+        const { name } = member.guild;
+        member.send(`Welcome to ${name}! DM me with \`!verify\` to start the verification process and gain access to the server!`)
     })
 }

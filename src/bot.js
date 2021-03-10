@@ -8,7 +8,6 @@ const Commando = require('discord.js-commando');
 const { prefix } = require('../config.json');
 const env = require('dotenv').config().parsed;
 
-const mongo = require('./mongo');
 const welcome = require('./events/welcome');
 
 const client = new Commando.CommandoClient({
@@ -24,13 +23,6 @@ client.on('ready', async () => {
     });
     client.user.setPresence({ status: 'dnd' });
 
-    await mongo().then(mongoose => {
-        try {
-            console.log('Connected to mongo');
-        } finally {
-            mongoose.connection.close();
-        }
-    })
     welcome(client);
 
     client.registry
