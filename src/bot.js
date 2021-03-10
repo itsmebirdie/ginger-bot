@@ -9,6 +9,8 @@ const { prefix } = require('../config.json');
 const env = require('dotenv').config().parsed;
 
 const welcome = require('./events/welcome');
+const webServer = require('./website/server');
+const server = require('./website/server');
 
 const client = new Commando.CommandoClient({
     owner: '713019770949206016',
@@ -31,6 +33,8 @@ client.on('ready', async () => {
             ['moderation', 'Moderation Commands']
         ])
         .registerCommandsIn(path.join(__dirname, 'cmds'));
+
+    server();
 });
 
 client.login(env.TOKEN);
