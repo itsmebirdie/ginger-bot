@@ -37,4 +37,4 @@ client.on('ready', async () => {
     server();
 });
 
-client.login(env.TOKEN);
+client.login(process.env.TOKEN);
