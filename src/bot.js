@@ -32,7 +32,7 @@ client.on('ready', async () => {
             ['misc', 'Miscellaneous Commands'],
             ['moderation', 'Moderation Commands']
         ])
-        .registerDefaultCommands()
+        .registerDefaults()
         .registerCommandsIn(path.join(__dirname, 'cmds'));
 
     server();
