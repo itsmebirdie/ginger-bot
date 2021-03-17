@@ -1,6 +1,6 @@
-const Commando = require('discord.js-commando');
+const { Command } = require('discord.js-commando');
 
-module.exports = class KickCommand extends Commando.Command {
+module.exports = class KickCommand extends Command {
     constructor(client) {
         super(client, {
             name: 'ban',
@@ -10,7 +10,8 @@ module.exports = class KickCommand extends Commando.Command {
             clientPermissions: ['BAN_MEMBERS'],
             userPermissions: ['BAN_MEMBERS'],
             argsType: 'multiple',
-            argsCount: 2
+            argsCount: 2,
+            guildOnly: true
         })
     }
 
