@@ -1,9 +1,9 @@
+require('module-alias/register');
 const path = require('path');
 const fs = require('fs');
-
 const Commando = require('discord.js-commando');
 
-const { prefix, owners } = require('../config.json');
+const { prefix, owners } = require('@root/config.json');
 require('dotenv').config();
 
 const client = new Commando.CommandoClient({
